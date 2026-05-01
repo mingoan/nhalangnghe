@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhà Lắng Nghe – Cộng đồng Chăm sóc Sức khỏe Tinh thần</title>
+<meta name="description" content="Nhà Lắng Nghe là cộng đồng chăm sóc sức khỏe tinh thần dành cho người đi làm tại Việt Nam, cung cấp nhóm hỗ trợ và nội dung giáo dục về tâm lý.">
+<meta name="keywords" content="sức khỏe tinh thần, tâm lý, nhóm hỗ trợ, support group, người đi làm, burnout, stress công việc, Việt Nam">
+<meta property="og:title" content="Nhà Lắng Nghe – Cộng đồng Chăm sóc Sức khỏe Tinh thần">
+<meta property="og:description" content="Không gian an toàn cho người đi làm Việt Nam kết nối, học hỏi và chăm sóc sức khỏe tinh thần.">
+<meta property="og:type" content="website">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Nhà Lắng Nghe",
+  "description": "Nhà Lắng Nghe là cộng đồng chăm sóc sức khỏe tinh thần tại Việt Nam, hỗ trợ người đi làm thông qua các nhóm hỗ trợ đồng cảnh ngộ và nội dung giáo dục tâm lý chất lượng.",
+  "url": "https://nhalangghe.vn",
+  "foundingDate": "2023",
+  "areaServed": "VN",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Người đi làm, dân văn phòng tại Việt Nam"
+  },
+  "knowsAbout": ["sức khỏe tinh thần", "burnout", "stress công việc", "lo âu", "trầm cảm", "tâm lý học"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dịch vụ cộng đồng",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Nhóm hỗ trợ",
+        "description": "Các nhóm nhỏ nơi thành viên chia sẻ và hỗ trợ nhau trong không gian bảo mật"
+      },
+      {
+        "@type": "Offer",
+        "name": "Nội dung giáo dục",
+        "description": "Bài viết chuyên sâu và podcast về sức khỏe tinh thần bằng tiếng Việt"
+      }
+    ]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest: #1e3a2f;
+    --forest-mid: #2d5243;
+    --sage: #5c8a6e;
+    --sage-light: #a8c5b0;
+    --cream: #f8f4ed;
+    --cream-dark: #efe9de;
+    --sand: #d4c9b4;
+    --terracotta: #b05a3a;
+    --terracotta-light: #e8d5cb;
+    --charcoal: #2c2c2a;
+    --muted: #6b6960;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248, 244, 237, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--sand);
+    padding: 0 max(2rem, 5vw);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--forest);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .nav-logo span { color: var(--terracotta); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .nav-links a:hover { color: var(--forest); }
+
+  .nav-cta {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--white) !important;
+    background: var(--forest);
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--forest-mid) !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 5rem max(2rem, 5vw);
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: var(--terracotta-light);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    left: 40%;
+    bottom: -100px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: var(--sage-light);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    background: var(--terracotta-light);
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    color: var(--forest);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .hero-desc {
+    font-size: 1.0625rem;
+    color: var(--muted);
+    max-width: 460px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--forest);
+    color: var(--white);
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--forest-mid); transform: translateY(-1px); }
+
+  .btn-ghost {
+    color: var(--forest);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--sage-light);
+    padding-bottom: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+  /* HERO VISUAL */
+  .hero-visual {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  .stat-card.accent {
+    background: var(--forest);
+    border-color: var(--forest);
+  }
+
+  .stat-card.accent .stat-num,
+  .stat-card.accent .stat-label { color: var(--white); }
+  .stat-card.accent .stat-label { opacity: 0.7; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: var(--forest);
+    line-height: 1;
+    margin-bottom: 0.375rem;
+  }
+  .stat-label {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .quote-card {
+    background: var(--cream-dark);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    border-left: 3px solid var(--terracotta);
+  }
+  .quote-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--forest);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .quote-card cite {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  /* SECTION BASE */
+  section {
+    padding: 5rem max(2rem, 5vw);
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .section-heading {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--forest);
+    margin-bottom: 1.25rem;
+    max-width: 620px;
+  }
+
+  .section-sub {
+    font-size: 1.0625rem;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.8;
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--forest);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about .section-tag { color: var(--sage-light); }
+  .about .section-heading { color: var(--white); max-width: 100%; }
+  .about .section-sub { color: rgba(255,255,255,0.72); }
+
+  .about-text p {
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+  }
+
+  .about-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .pillar {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .pillar-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+
+  .pillar-body h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+  .pillar-body p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    margin: 0 !important;
+  }
+
+  /* ACTIVITIES */
+  .activities { background: var(--cream); }
+
+  .activities-header {
+    max-width: 680px;
+    margin-bottom: 3.5rem;
+  }
+
+  .activity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .activity-card {
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: 20px;
+    padding: 2rem 2rem 2rem 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .activity-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(30,58,47,0.1);
+  }
+
+  .activity-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .activity-icon.green { background: #e6f0e9; }
+  .activity-icon.terra { background: var(--terracotta-light); }
+
+  .activity-card h3 {
+    font-size: 1.375rem;
+    color: var(--forest);
+    margin-bottom: 0.75rem;
+  }
+
+  .activity-card p {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .activity-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 0.8125rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    background: var(--cream-dark);
+    color: var(--forest);
+    border: 1px solid var(--sand);
+  }
+
+  /* WHY */
+  .why {
+    background: var(--cream-dark);
+  }
+
+  .why-inner {
+    max-width: 1000px;
+  }
+
+  .why-header {
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .reason-card {
+    padding: 1.75rem;
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: 16px;
+  }
+
+  .reason-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--terracotta);
+    opacity: 0.4;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .reason-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--forest);
+    margin-bottom: 0.5rem;
+  }
+
+  .reason-card p {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* AUDIENCE */
+  .audience {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .audience-problems {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .problem-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    background: var(--cream);
+    border-radius: 12px;
+    border: 1px solid var(--sand);
+  }
+
+  .problem-dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    margin-top: 7px;
+  }
+
+  .problem-item p {
+    font-size: 0.9375rem;
+    color: var(--charcoal);
+    line-height: 1.6;
+  }
+
+  /* PROCESS */
+  .process { background: var(--cream); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: var(--sand);
+    z-index: 0;
+  }
+
+  .step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1.5px solid var(--sand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    color: var(--forest);
+  }
+
+  .step:nth-child(2) .step-num { background: var(--forest); color: var(--white); border-color: var(--forest); }
+
+  .step h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--forest);
+    margin-bottom: 0.375rem;
+  }
+  .step p { font-size: 0.8125rem; color: var(--muted); line-height: 1.6; }
+
+  /* CTA */
+  .cta-section {
+    background: var(--forest);
+    text-align: center;
+    padding: 6rem max(2rem, 5vw);
+  }
+
+  .cta-section .section-tag { color: var(--sage-light); display: block; margin-bottom: 0.75rem; }
+  .cta-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white);
+    margin-bottom: 1.25rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-section p {
+    color: rgba(255,255,255,0.65);
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-light {
+    background: var(--white);
+    color: var(--forest);
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-light:hover { background: var(--cream); transform: translateY(-1px); }
+
+  .btn-outline-light {
+    background: transparent;
+    color: var(--white);
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-outline-light:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.6);
+    padding: 3rem max(2rem, 5vw);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand .nav-logo { font-size: 1.25rem; color: var(--white); margin-bottom: 0.75rem; display: block; }
+  .footer-brand p { font-size: 0.875rem; line-height: 1.7; max-width: 280px; }
+
+  footer h5 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+  footer ul a { font-size: 0.875rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+  footer ul a:hover { color: var(--white); }
+
+  .footer-bottom {
+    background: var(--charcoal);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 1.25rem max(2rem, 5vw);
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-visual { display: none; }
+    .about { grid-template-columns: 1fr; gap: 2.5rem; }
+    .activity-grid { grid-template-columns: 1fr; }
+    .reasons-grid { grid-template-columns: 1fr; }
+    .audience { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .steps::before { display: none; }
+    footer { grid-template-columns: 1fr; gap: 2rem; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Điều hướng chính">
+  <a href="#" class="nav-logo">Nhà <span>Lắng Nghe</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">Về chúng tôi</a></li>
+    <li><a href="#activities">Hoạt động</a></li>
+    <li><a href="#why">Tại sao chúng tôi</a></li>
+    <li><a href="#join" class="nav-cta">Tham gia cộng đồng</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<header class="hero" role="banner">
+  <div class="hero-content">
+    <span class="hero-tag">Sức khỏe tinh thần · Cộng đồng Việt Nam</span>
+    <h1>Nơi bạn được <em>nghe</em> và <em>thấu hiểu</em></h1>
+    <p class="hero-desc">
+      Nhà Lắng Nghe là cộng đồng chăm sóc sức khỏe tinh thần dành cho người đi làm Việt Nam — nơi bạn tìm thấy sự đồng cảm, kiến thức tâm lý thực tế, và những người bạn đồng hành thật sự hiểu bạn.
+    </p>
+    <div class="hero-actions">
+      <a href="#join" class="btn-primary">Tham gia miễn phí</a>
+      <a href="#activities" class="btn-ghost">Xem hoạt động →</a>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-hidden="true">
+    <div class="stat-cards">
+      <div class="stat-card accent">
+        <div class="stat-num">3,000+</div>
+        <div class="stat-label">thành viên trong cộng đồng</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">85%</div>
+        <div class="stat-label">cảm thấy bớt cô đơn sau khi tham gia</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">120+</div>
+        <div class="stat-label">bài viết & tập podcast đã xuất bản</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">nhóm hỗ trợ đã được tổ chức</div>
+      </div>
+    </div>
+    <div class="quote-card">
+      <p>"Lần đầu tiên mình cảm thấy không phải là người duy nhất cảm thấy như vậy khi đi làm."</p>
+      <cite>— Thành viên cộng đồng, 27 tuổi, TP.HCM</cite>
+    </div>
+  </div>
+</header>
+
+<!-- About -->
+<section class="about" id="about" aria-labelledby="about-heading">
+  <div class="about-text">
+    <span class="section-tag">Về chúng tôi</span>
+    <h2 class="section-heading" id="about-heading">Nhà Lắng Nghe là gì?</h2>
+    <p>
+      Nhà Lắng Nghe là cộng đồng phi lợi nhuận được thành lập với sứ mệnh xóa bỏ kỳ thị về sức khỏe tinh thần và tạo ra không gian an toàn cho người đi làm Việt Nam chăm sóc bản thân.
+    </p>
+    <p>
+      Chúng tôi tin rằng sức khỏe tinh thần không phải là xa xỉ phẩm. Đây là nền tảng cho cuộc sống và công việc ý nghĩa — và mọi người đều xứng đáng được hỗ trợ.
+    </p>
+  </div>
+  <div class="about-pillars">
+    <div class="pillar">
+      <div class="pillar-icon">🔒</div>
+      <div class="pillar-body">
+        <h4>Bảo mật tuyệt đối</h4>
+        <p>Mọi chia sẻ trong nhóm được giữ kín. Danh tính thành viên được bảo vệ hoàn toàn.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🤝</div>
+      <div class="pillar-body">
+        <h4>Không phán xét</h4>
+        <p>Chúng tôi lắng nghe để hiểu, không để cho lời khuyên hay đánh giá.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">📚</div>
+      <div class="pillar-body">
+        <h4>Dựa trên bằng chứng</h4>
+        <p>Nội dung và phương pháp của chúng tôi được xây dựng theo chuẩn tâm lý học hiện đại.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🌱</div>
+      <div class="pillar-body">
+        <h4>Định hướng thực hành</h4>
+        <p>Không chỉ lý thuyết — chúng tôi cung cấp công cụ áp dụng được ngay trong cuộc sống.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Activities -->
+<section class="activities" id="activities" aria-labelledby="activities-heading">
+  <div class="activities-header">
+    <span class="section-tag">Hoạt động</span>
+    <h2 class="section-heading" id="activities-heading">Chúng tôi hỗ trợ bạn như thế nào?</h2>
+    <p class="section-sub">Hai hình thức hoạt động cốt lõi, được thiết kế phù hợp với nhịp sống bận rộn của người đi làm.</p>
+  </div>
+
+  <div class="activity-grid">
+    <article class="activity-card">
+      <div class="activity-icon green">🌿</div>
+      <h3>Nhóm hỗ trợ đồng cảnh ngộ</h3>
+      <p>
+        Các nhóm nhỏ từ 6–10 người, gặp gỡ định kỳ mỗi tháng trong không gian bảo mật và không phán xét. Mỗi nhóm được dẫn dắt bởi người điều phối được đào tạo bài bản, tập trung vào một chủ đề cụ thể.
+      </p>
+      <div class="activity-tags">
+        <span class="tag">Burnout & kiệt sức</span>
+        <span class="tag">Lo âu công việc</span>
+        <span class="tag">Cân bằng cuộc sống</span>
+        <span class="tag">Ranh giới cá nhân</span>
+      </div>
+    </article>
+
+    <article class="activity-card">
+      <div class="activity-icon terra">🎙️</div>
+      <h3>Nội dung giáo dục tâm lý</h3>
+      <p>
+        Bài viết chuyên sâu và podcast bằng tiếng Việt, được biên soạn bởi các chuyên gia tâm lý và những người có trải nghiệm thực tế. Nội dung thiết thực, không hoa mỹ.
+      </p>
+      <div class="activity-tags">
+        <span class="tag">Podcast hàng tuần</span>
+        <span class="tag">Bài viết chuyên sâu</span>
+        <span class="tag">Bài tập tự thực hành</span>
+        <span class="tag">Miễn phí hoàn toàn</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Audience -->
+<section class="audience" aria-labelledby="audience-heading">
+  <div>
+    <span class="section-tag">Dành cho ai?</span>
+    <h2 class="section-heading" id="audience-heading">Bạn có đang cảm thấy như thế này?</h2>
+    <p class="section-sub">Nhà Lắng Nghe được tạo ra đặc biệt cho người đi làm Việt Nam đang điều hướng những áp lực của cuộc sống hiện đại.</p>
+  </div>
+  <div class="audience-problems" role="list">
+    <div class="problem-item" role="listitem">
+      <div class="problem-dot"></div>
+      <p>Cảm thấy kiệt sức dù chưa hiểu lý do tại sao</p>
+    </div>
+    <div class="problem-item" role="listitem">
+      <div class="problem-dot"></div>
+      <p>Khó nói chuyện về cảm xúc với người thân hay đồng nghiệp</p>
+    </div>
+    <div class="problem-item" role="listitem">
+      <div class="problem-dot"></div>
+      <p>Cảm giác cô đơn dù xung quanh luôn có nhiều người</p>
+    </div>
+    <div class="problem-item" role="listitem">
+      <div class="problem-dot"></div>
+      <p>Lo lắng mình "không đủ giỏi" hoặc "không đủ cố gắng"</p>
+    </div>
+    <div class="problem-item" role="listitem">
+      <div class="problem-dot"></div>
+      <p>Muốn tìm hiểu về tâm lý nhưng không biết bắt đầu từ đâu</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="why" id="why" aria-labelledby="why-heading">
+  <div class="why-inner">
+    <div class="why-header">
+      <span class="section-tag">Tại sao chúng tôi</span>
+      <h2 class="section-heading" id="why-heading">Điều khiến Nhà Lắng Nghe khác biệt</h2>
+    </div>
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <div class="reason-num">01</div>
+        <h4>Nói tiếng Việt, hiểu văn hóa Việt</h4>
+        <p>Nội dung và phương pháp được bản địa hóa — không dịch từ tài liệu nước ngoài mà thiếu ngữ cảnh văn hóa.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">02</div>
+        <h4>Thiết kế cho nhịp sống bận rộn</h4>
+        <p>Không yêu cầu cam kết dài hạn. Tham gia một nhóm, nghe một podcast — tùy theo thời gian và nhu cầu của bạn.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">03</div>
+        <h4>Cộng đồng đồng cảnh ngộ thật sự</h4>
+        <p>Bạn kết nối với những người đang đối mặt với những thách thức tương tự — không phải chuyên gia, mà là người bạn đồng hành.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">04</div>
+        <h4>Miễn phí và không có nghị trình ẩn</h4>
+        <p>Không bán khóa học, không ép mua sản phẩm. Sứ mệnh duy nhất của chúng tôi là sức khỏe tinh thần cộng đồng.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">05</div>
+        <h4>Không có kỳ thị</h4>
+        <p>Chúng tôi chuẩn hóa việc nói về sức khỏe tinh thần như nói về sức khỏe thể chất — bình thường, cần thiết, và không đáng xấu hổ.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">06</div>
+        <h4>Đội ngũ có chuyên môn thật sự</h4>
+        <p>Cộng tác với các chuyên gia tâm lý học lâm sàng, đảm bảo nội dung và quy trình đạt chuẩn chuyên môn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" aria-labelledby="process-heading">
+  <div style="text-align:center; max-width:560px; margin: 0 auto 1rem;">
+    <span class="section-tag">Bắt đầu</span>
+    <h2 class="section-heading" id="process-heading" style="max-width:100%; margin-left:auto; margin-right:auto;">Tham gia chỉ trong 4 bước</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Đăng ký miễn phí</h4>
+      <p>Điền form đơn giản, không cần thông tin cá nhân nhạy cảm</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Ghép nhóm phù hợp</h4>
+      <p>Chúng tôi kết nối bạn với nhóm phù hợp dựa trên nhu cầu</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Tham dự buổi đầu tiên</h4>
+      <p>Gặp gỡ nhóm trong một buổi giới thiệu nhẹ nhàng, không áp lực</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Tiếp tục hành trình</h4>
+      <p>Đọc, nghe, chia sẻ theo nhịp của riêng bạn</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="join" aria-labelledby="cta-heading">
+  <span class="section-tag">Bắt đầu hôm nay</span>
+  <h2 id="cta-heading">Sức khỏe tinh thần của bạn xứng đáng được quan tâm</h2>
+  <p>Tham gia cộng đồng miễn phí. Không cần cam kết, không phán xét — chỉ cần bạn bước vào.</p>
+  <div class="cta-actions">
+    <a href="#" class="btn-light">Tham gia cộng đồng ngay</a>
+    <a href="#activities" class="btn-outline-light">Tìm hiểu thêm</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <div class="footer-brand">
+    <span class="nav-logo">Nhà <span style="color: var(--terracotta);">Lắng Nghe</span></span>
+    <p>Cộng đồng chăm sóc sức khỏe tinh thần dành cho người đi làm Việt Nam. Chúng tôi tin rằng mỗi người đều xứng đáng được lắng nghe.</p>
+  </div>
+  <div>
+    <h5>Hoạt động</h5>
+    <ul>
+      <li><a href="#">Nhóm hỗ trợ</a></li>
+      <li><a href="#">Podcast</a></li>
+      <li><a href="#">Bài viết</a></li>
+      <li><a href="#">Tài liệu tự học</a></li>
+    </ul>
+  </div>
+  <div>
+    <h5>Về chúng tôi</h5>
+    <ul>
+      <li><a href="#">Sứ mệnh</a></li>
+      <li><a href="#">Đội ngũ</a></li>
+      <li><a href="#">Liên hệ</a></li>
+      <li><a href="#">Chính sách bảo mật</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2025 Nhà Lắng Nghe. Cộng đồng phi lợi nhuận vì sức khỏe tinh thần Việt Nam.</p>
+</div>
+
+</body>
+</html>
