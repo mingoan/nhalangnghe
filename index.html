@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Nhà Lắng Nghe - Cộng đồng chăm sóc sức khỏe tinh thần chuyên nghiệp dành cho dân văn phòng. Gặp gỡ đội ngũ những 'Nhà Lắng Nghe' tận tâm và chuyên môn.">
-    <meta name="keywords" content="Nhà Lắng Nghe, đội ngũ, chuyên gia tâm lý, dân văn phòng, sức khỏe tinh thần, nhóm hỗ trợ">
+    <meta name="description" content="Nhà Lắng Nghe - Cộng đồng chăm sóc sức khỏe tinh thần chuyên nghiệp dành cho dân văn phòng. Nhóm hỗ trợ, podcast và đội ngũ đồng hành tin cậy.">
+    <meta name="keywords" content="Nhà Lắng Nghe, sức khỏe tinh thần, dân văn phòng, nhóm hỗ trợ, mental health, hỗ trợ tâm lý">
     
-    <title>Đội ngũ Nhà Lắng Nghe | Những người đồng hành tin cậy</title>
+    <title>Nhà Lắng Nghe | Chăm sóc sức khỏe tinh thần dân văn phòng</title>
     
     <style>
         :root {
@@ -15,11 +15,11 @@
             --text-color: #333333;
             --accent-blue: #1E3A8A;
             --accent-peach: #FF9E80;
-            --border-sketch: 2px solid #333;
+            --border-style: 2px solid #333;
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -33,134 +33,185 @@
             padding: 0 20px;
         }
 
-        /* Header */
+        /* HEADER */
         header {
             text-align: center;
-            padding: 60px 20px;
-            margin-bottom: 40px;
+            padding: 80px 20px;
+            margin-bottom: 50px;
         }
 
         header h1 {
             color: var(--accent-blue);
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 0;
             text-transform: uppercase;
-            letter-spacing: -1px;
         }
 
-        /* Navigation Style Doodle Line */
+        .subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
         .divider {
             height: 4px;
             background-color: var(--text-color);
-            width: 150px;
+            width: 100px;
             margin: 20px auto;
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
         }
 
-        /* Team Section */
-        .team-intro {
-            text-align: center;
-            margin-bottom: 50px;
+        /* SECTIONS GENERAL */
+        section {
+            margin-bottom: 100px;
         }
 
+        h2 {
+            color: var(--accent-blue);
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background-color: var(--accent-peach);
+            bottom: 5px;
+            left: 0;
+            z-index: -1;
+            border-radius: 20px 50px 10px 40px;
+            opacity: 0.6;
+        }
+
+        /* FLEX LAYOUT */
+        .flex-box {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .flex-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        /* DOODLE BOXES (Images placeholders) */
+        .illustration {
+            flex: 1;
+            height: 300px;
+            background-color: #fff;
+            border: var(--border-style);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 8px 8px 0px var(--accent-blue);
+        }
+
+        /* ACTIVITIES GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            padding: 25px;
+            background: #fff;
+            border: 2px solid var(--text-color);
+            border-radius: 15px 100px 15px 100px/100px 15px 100px 15px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 0px var(--accent-peach);
+        }
+
+        /* TEAM SECTION */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .team-card {
             background: #fff;
-            padding: 30px;
-            border: var(--border-sketch);
-            /* Rough border radius hiệu ứng vẽ tay */
-            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            padding: 25px;
+            border: var(--border-style);
+            border-radius: 20px 50px 20px 50px;
             text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
+            transition: 0.3s;
         }
 
         .team-card:hover {
-            transform: rotate(-1deg) scale(1.02);
             box-shadow: 10px 10px 0px var(--accent-peach);
         }
 
-        /* Avatar Placeholder Doodle Style */
         .avatar {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 20px;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
             background-color: #eee;
             border: 2px solid var(--text-color);
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 40%;
+            border-radius: 50% 40% 60% 40%;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
+            font-size: 40px;
         }
 
-        .avatar i {
-            font-size: 4rem;
-            color: var(--accent-blue);
-        }
-
-        .team-card h3 {
-            color: var(--accent-blue);
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        .team-card .role {
+        .role {
             color: var(--accent-peach);
             font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            margin-bottom: 15px;
+            font-size: 0.85rem;
             display: block;
+            margin-bottom: 10px;
         }
 
-        .team-card p {
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        /* CTA Section */
-        .cta-box {
-            background-color: var(--accent-blue);
-            color: #fff;
-            padding: 60px;
-            text-align: center;
-            border-radius: 15px 255px 15px 25px/25px 15px 255px 15px;
-            margin-bottom: 80px;
-        }
-
-        .cta-box h2 { color: #fff; }
-
+        /* BUTTON */
         .btn {
             display: inline-block;
             background-color: var(--accent-peach);
             color: #fff;
-            padding: 15px 40px;
-            font-weight: bold;
+            padding: 15px 35px;
             text-decoration: none;
-            border: 2px solid #fff;
-            border-radius: 50px;
-            margin-top: 20px;
-            box-shadow: 4px 4px 0px #333;
+            font-weight: bold;
+            border-radius: 5px 30px 5px 30px;
+            border: 2px solid var(--text-color);
+            box-shadow: 4px 4px 0px var(--text-color);
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--text-color);
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            border-top: 1px solid #ddd;
-            font-size: 0.8rem;
+            padding: 60px;
+            border-top: 2px solid var(--text-color);
+            background: #fff;
         }
 
-        @media (max-width: 600px) {
-            .team-grid { grid-template-columns: 1fr; }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .flex-box, .flex-reverse { flex-direction: column; }
+            .grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -168,55 +219,84 @@
 
     <div class="container">
         <header>
-            <p style="color: var(--accent-peach); font-weight: bold; margin-bottom: 0;">Cộng đồng chuyên nghiệp</p>
             <h1>Nhà Lắng Nghe</h1>
             <div class="divider"></div>
+            <p class="subtitle">Không gian an toàn cho sức khỏe tinh thần của người đi làm.</p>
         </header>
 
-        <section class="team-intro">
-            <h2 style="color: var(--accent-blue);">Những "Nhà Lắng Nghe"</h2>
-            <p style="max-width: 700px; margin: 0 auto;">Chúng tôi không chỉ là những người quan sát, mà là những người đồng hành có chuyên môn, sẵn sàng giữ một không gian an toàn để bạn tự tháo gỡ những nút thắt của mình.</p>
+        <section class="flex-box">
+            <div class="content-text">
+                <h2>Dành Cho Ai?</h2>
+                <p>Chúng tôi hướng đến <strong>Người đi làm và Dân văn phòng</strong>. Những người đang đối mặt với áp lực công việc, deadline, sự chênh vênh trong sự nghiệp hay đơn giản là cần một không gian an toàn để tháo gỡ những nút thắt cảm xúc sau giờ hành chính.</p>
+                <p>Môi trường được thiết kế chuyên nghiệp, đảm bảo tính bảo mật và sự thấu hiểu sâu sắc với văn hóa công sở.</p>
+            </div>
+            <div class="illustration">
+                <strong style="color: var(--accent-blue);">[Visual: Nhân viên văn phòng]</strong>
+                <p style="font-size: 0.8rem; font-style: italic;">Nét vẽ thô sáp dầu, nhân vật đang nghỉ ngơi bên ly cà phê màu Cam đào.</p>
+            </div>
         </section>
 
-        <div class="team-grid">
-            <div class="team-card">
-                <div class="avatar" style="background-color: #D1FAE5;">
-                    <span style="font-size: 50px;">🌿</span>
+        <section class="flex-box flex-reverse">
+            <div class="content-text">
+                <h2>Chúng Tôi Làm Gì?</h2>
+                <p>Nhà Lắng Nghe duy trì các hình thức hoạt động hỗ trợ thiết thực:</p>
+                <div class="grid">
+                    <div class="card">
+                        <h3 style="color: var(--accent-blue);">Nhóm Hỗ Trợ</h3>
+                        <p>Các buổi thảo luận nhóm (Support Group) an toàn, nơi mọi người được lắng nghe mà không bị phán xét.</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="color: var(--accent-blue);">Nội Dung Giáo Dục</h3>
+                        <p>Hệ thống bài viết chuyên sâu và Podcast chia sẻ kiến thức tâm lý học ứng dụng cho cuộc sống.</p>
+                    </div>
                 </div>
-                <h3>Minh An</h3>
-                <span class="role">Điều phối viên cộng đồng</span>
-                <p>Với 5 năm kinh nghiệm trong quản trị nhân sự, An hiểu rõ những "nỗi đau ngầm" của dân văn phòng và cách tạo dựng sự kết nối trong nhóm hỗ trợ.</p>
             </div>
+            <div class="illustration" style="box-shadow: -8px 8px 0px var(--accent-peach);">
+                <strong style="color: var(--accent-peach);">[Visual: Vòng tròn lắng nghe]</strong>
+                <p style="font-size: 0.8rem; font-style: italic;">Hình khối tự do, nhiều nhân vật đa dạng đang kết nối với nhau.</p>
+            </div>
+        </section>
 
-            <div class="team-card">
-                <div class="avatar" style="background-color: #DBEAFE;">
-                    <span style="font-size: 50px;">🌸</span>
+        <section style="text-align: center;">
+            <h2>Những "Nhà Lắng Nghe"</h2>
+            <p style="margin-bottom: 40px;">Đội ngũ đồng hành tận tâm, chuyên nghiệp và giàu lòng trắc ẩn.</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #D1FAE5;">🌿</div>
+                    <h3>Minh An</h3>
+                    <span class="role">Điều phối viên cộng đồng</span>
+                    <p>Người kết nối và giữ lửa cho các buổi thảo luận nhóm luôn ấm áp.</p>
                 </div>
-                <h3>Bác sĩ Tâm</h3>
-                <span class="role">Chuyên gia tham vấn</span>
-                <p>Chuyên sâu về trị liệu nhận thức hành vi (CBT), giúp các thành viên Nhà Lắng Nghe có cái nhìn khoa học và thực tế về các rối loạn lo âu công sở.</p>
-            </div>
-
-            <div class="team-card">
-                <div class="avatar" style="background-color: #FEF3C7;">
-                    <span style="font-size: 50px;">🎨</span>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #DBEAFE;">🌸</div>
+                    <h3>Bác sĩ Tâm</h3>
+                    <span class="role">Chuyên gia tham vấn</span>
+                    <p>Cố vấn chuyên môn với các phương pháp khoa học giúp xoa dịu lo âu.</p>
                 </div>
-                <h3>Hoàng Nam</h3>
-                <span class="role">Sáng tạo nội dung giáo dục</span>
-                <p>Người đứng sau những tập Podcast và bài viết chữa lành, chuyển hóa các kiến thức tâm lý khô khan thành những câu chuyện gần gũi, dễ thấm.</p>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #FEF3C7;">🎨</div>
+                    <h3>Hoàng Nam</h3>
+                    <span class="role">Sáng tạo nội dung</span>
+                    <p>Người chuyển tải những kiến thức tâm lý thành lời nói và hình ảnh gần gũi.</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <section class="cta-box">
-            <h2>Bạn không cần phải mang gánh nặng một mình</h2>
-            <p>Nhà Lắng Nghe luôn mở cửa để đón nhận những chia sẻ từ bạn.</p>
-            <a href="#" class="btn">Gửi lời nhắn cho chúng tôi</a>
+        <section style="text-align: center; padding: 60px 0;">
+            <div style="background-color: var(--accent-blue); color: #fff; padding: 50px; border-radius: 30px; border: 3px solid #333;">
+                <h2 style="color: #fff;">Bạn đã sẵn sàng để được lắng nghe?</h2>
+                <p>Hãy cùng Nhà Lắng Nghe chăm sóc sức khỏe tinh thần của bạn ngay hôm nay.</p>
+                <br>
+                <a href="#" class="btn">Tham gia Cộng đồng</a>
+            </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Nhà Lắng Nghe - Chuyên nghiệp & Đáng tin cậy. <br> Powered by Community & Empathy.</p>
+        <p>&copy; 2026 Nhà Lắng Nghe. Tất cả vì sức khỏe tinh thần của người đi làm.</p>
+        <p style="font-size: 0.7rem; color: #999;">Chuyên nghiệp - Đáng tin cậy - Tối giản</p>
     </footer>
 
 </body>
