@@ -16,7 +16,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+/* =========================================
+   1. PHẦN LOGO (To hơn 20%)
+   ========================================= */
+
+/* Tìm và thay thế đoạn code gốc này... */
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--brown-deep);text-decoration:none;letter-spacing:-.01em}
+
+/* ...thành đoạn code mới này: */
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.68rem;font-weight:600;color:var(--brown-deep);text-decoration:none;letter-spacing:-.01em}
+
+/* =========================================
+   2. NÚT THEO DÕI (Sửa khối màu)
+   ========================================= */
+
+/* Tìm và thay thế hai đoạn code gốc này... */
+.nav-cta{color:var(--white)!important;background:var(--sage-dark);padding:.55rem 1.5rem;border-radius:100px;box-shadow: 0 4px 12px rgba(74,114,96,0.2);transition:var(--transition)!important}
+.nav-cta:hover{background:var(--sage)!important;transform:translateY(-1px);box-shadow: 0 6px 16px rgba(74,114,96,0.3);}
+
+/* ...thành hai đoạn code mới này (Sử dụng màu nâu đất ấm áp #a18160): */
+.nav-cta{color:var(--white)!important;background:#a18160;padding:.55rem 1.5rem;border-radius:100px;box-shadow: 0 4px 12px rgba(161,129,96,0.2);transition:var(--transition)!important}
+.nav-cta:hover{background:#b19270!important;transform:translateY(-1px);box-shadow: 0 6px 16px rgba(161,129,96,0.3);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --paper:#fcfaf6;--paper-dark:#f3eae0;--paper-deeper:#e6dac9;
   --sage:#7a9e8e;--sage-dark:#4a7260;--sage-light:#dde8e1;
